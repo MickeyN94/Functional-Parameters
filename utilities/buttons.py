@@ -1,6 +1,7 @@
 from nicegui.elements.input import Input
 from nicegui.elements.number import Number
 from nicegui.elements.checkbox import Checkbox
+from nicegui.elements.select import Select
 
 
 class NamedInput(Input):
@@ -24,5 +25,13 @@ class NamedCheckbox(Checkbox):
     def __init__(self, text, value=False, name="", on_change=None):
         super().__init__(text=text, value=value, on_change=on_change)
         
+        
+        self.name = name
+
+
+class NamedSelect(Select):
+    
+    def __init__(self, options, label="", name=""):
+        super().__init__(options=options, label=label)
         
         self.name = name
