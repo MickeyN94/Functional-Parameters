@@ -41,6 +41,17 @@ def bs1806_oring(oring_size):
             print(f"O-ring size not in BS1806: {oring_size}")
 
 
+def total_oring_stretch_range(groove_dia, groove_dia_tol, oring):
+    _, _, oring_id_max, oring_id_min = oring_dims(oring)
+    groove_dia_max, groove_dia_min = dimension_limits(groove_dia, groove_dia_tol)
+    
+    
+    max_stretch = oring_stretch(groove_dia_max, oring_id_min)    
+    min_stretch = oring_stretch(groove_dia_min, oring_id_max)
+    
+    return {"max_stretch": max_stretch, "min_stretch": min_stretch}    
+
+
 def oring_stretch(groove_dia, oring_id):
     # returns the % stretch of the oring
     stretch = (groove_dia - oring_id) / oring_id * 100

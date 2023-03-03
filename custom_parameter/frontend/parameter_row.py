@@ -15,4 +15,7 @@ class ParameterRow(FunctionalRow):
             ui.button("Remove", on_click=self.delete_row)
 
         self.all_dimensions = [self.name_label, self.parameter_value]
+    
+    def get_inventor_assembly_parameters(self):
+        return {self.name_label.value : self.parameter_value.value}
         
