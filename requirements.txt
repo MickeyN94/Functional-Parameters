@@ -1,2 +1,2 @@
 ﻿nicegui
-pywin32
+pypiwin32
